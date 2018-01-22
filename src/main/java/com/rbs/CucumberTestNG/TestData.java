@@ -2,6 +2,9 @@ package com.rbs.CucumberTestNG;
 
 import org.openqa.selenium.WebDriver;
 
+//Test Data Class - Supplies Login, Home, Product page and Payment page details
+//Also supplies URLa nd Browser name
+//Further need enhancement to convert it into YAML Loader. 
 public class TestData 
 {
 	
@@ -9,8 +12,13 @@ public class TestData
 		
 	public static class ConfigDetails
 	{
-		public static final String Browser = "firefox";//"chrome";
-		private static String strURL = "http://automationpractice.com/index.php"; // instance variable
+		//CHENAGE THE BROWSER TYPE IF YOU WANT TO RUN AGAINST CHROME / FIREFOX
+		public static final String Browser = "firefox";// To run against Firefox
+
+		//public static final String Browser = "chrome";//to run against Chrome;
+		
+		//Application URL - Can be modified 
+		private static String strURL = "http://automationpractice.com/index.php"; 
 		// method to retrieve the name from the object   
 		public static String getURL()   {  return strURL; }   
 		
