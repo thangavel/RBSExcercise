@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [BDD Test Suite]">
+  <parameter name="webSite" value="http://automationpractice.com/index.php"/>
+  <parameter name="deviceHost" value="localhost"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="devicePort" value="5551"/>
+  <parameter name="browserName" value="chrome_windows"/>
+  <parameter name="env" value="RBS"/>
+  <test name="Automation Practice Test(failed)">
+    <classes>
+      <class name="com.rbs.CucumberTestNGRunners.TestRunner">
+        <methods>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.rbs.CucumberTestNGRunners.TestRunner -->
+    </classes>
+  </test> <!-- Automation Practice Test(failed) -->
+</suite> <!-- Failed suite [BDD Test Suite] -->

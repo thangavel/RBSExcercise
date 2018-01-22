@@ -1,0 +1,262 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 9163826745,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PurchaseOrderStepdefs.initializeTest()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Order T-Shirt and Verify in Order History",
+        "description": "",
+        "id": "online-shopping;order-t-shirt-and-verify-in-order-history",
+        "after": [
+          {
+            "result": {
+              "duration": 324034930,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PurchaseOrderStepdefs.CleanTest()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3733943126,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "The user logged into the application",
+            "match": {
+              "location": "PurchaseOrderStepdefs.The_user_logged_into_the_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2279497238,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "navigate to the TShirts tab, select a TShirt",
+            "match": {
+              "location": "PurchaseOrderStepdefs.navigate_to_the_TShirts_tab_select_a_TShirt()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 11028982681,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "He enter quantiy, size, proceed checkout",
+            "match": {
+              "location": "PurchaseOrderStepdefs.he_enter_quantiy_size_proceed_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3068330198,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "he select billing address",
+            "match": {
+              "location": "PurchaseOrderStepdefs.he_select_billing_address()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2826315483,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "he select the Payment Type",
+            "match": {
+              "location": "PurchaseOrderStepdefs.he_select_the_Cheque()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 26094,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "proceed to checkout",
+            "match": {
+              "location": "PurchaseOrderStepdefs.proceed_to_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1892613900,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "he confirm the order",
+            "match": {
+              "location": "PurchaseOrderStepdefs.he_confirm_the_order()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 79799784,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the order should get succeed",
+            "match": {
+              "location": "PurchaseOrderStepdefs.the_order_should_get_succeed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3864104784,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the user can find the latest order listed in the Order History",
+            "match": {
+              "location": "PurchaseOrderStepdefs.the_user_can_find_the_latest_order_listed_in_the_Order_History()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@Order"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 9130050935,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PurchaseOrderStepdefs.initializeTest()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Update Personal Information (First Name) in My Account",
+        "description": "",
+        "id": "online-shopping;update-personal-information-(first-name)-in-my-account",
+        "after": [
+          {
+            "result": {
+              "duration": 279741250,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PurchaseOrderStepdefs.CleanTest()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3809572856,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "The user logged into the application",
+            "match": {
+              "location": "PurchaseOrderStepdefs.The_user_logged_into_the_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1158455324,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "he has navigated to My account page",
+            "match": {
+              "location": "AccountInfoStepdefs.he_has_navigated_to_My_account_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1474627944,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "edit the first name and save details",
+            "match": {
+              "location": "AccountInfoStepdefs.edit_the_first_name_and_save_details()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 77437953,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "he should see the account info has changed",
+            "match": {
+              "location": "AccountInfoStepdefs.he_should_see_the_account_info_has_changed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3630509162,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "he should revert the firstname again",
+            "match": {
+              "location": "AccountInfoStepdefs.he_should_revert_the_firstname_again()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 18,
+            "name": "@Account"
+          }
+        ]
+      }
+    ],
+    "name": "Online Shopping",
+    "description": "In order to test this application\nAs a registered user I want to purchase a TShirt and update my first name in my account details",
+    "id": "online-shopping",
+    "keyword": "Feature",
+    "uri": "PurchaseOrder.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@tag"
+      }
+    ]
+  }
+]
