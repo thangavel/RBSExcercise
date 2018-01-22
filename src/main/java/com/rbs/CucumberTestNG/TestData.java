@@ -23,6 +23,7 @@ public class TestData
 		public static String getURL()   {  return strURL; }   
 		
 	}
+	//Test data used for login page
 	public static class Login
 	{
 		private static String userName = "someone@example.com"; // instance variable
@@ -35,6 +36,7 @@ public class TestData
 
 	}
 	
+	//Test data used for Product page
 	public static class Product
 	{
 		private static String prodName = "Faded Short Sleeve T-shirts"; // instance variable
@@ -58,7 +60,7 @@ public class TestData
 
 	}
 
-	
+	//Test data used for Payment page
 	public static class Payment
 	{
 		

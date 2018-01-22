@@ -48,7 +48,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
- 
+
+/*
+ * Runner Class - Please specify the features="features" where you keep the cucumber feature files
+ * glue = {"com.rbs.StepDefinition"} - StepDefinition package has been glued with the runner class
+ * 
+ * All the available features will be fetched by this runner class and will get executed 
+ * 
+ * if the Scenarios marked as "@Ignore" then it will not be considered for execution 
+ * 
+ * 
+ */
+
 @CucumberOptions(
 //        features = "src/test/resources/features",
 		features="features",
