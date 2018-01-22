@@ -18,6 +18,12 @@ public class ProductPage extends LoadableComponent<ProductPage>
 	private WebDriver driver;
 	int intSeconds = 60;
 	
+	/****************************************************************************************
+	 * MethodName 		: ProductPage
+	 * Arguments 		: WebDriver driver
+	 * Description		: constructor to assign webdriver and initiate page objects
+	 *
+	 *****************************************************************************************/ 
 	public ProductPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -60,7 +66,12 @@ public class ProductPage extends LoadableComponent<ProductPage>
 	
 	 
 	 
-	 
+	/****************************************************************************************
+	 * MethodName 		: getProductsFromGrid
+	 * Arguments 		: NONE
+	 * Description		: Method to get the available products from the list.
+	 *
+	 *****************************************************************************************/ 
 	public List<WebElement> getProductsFromGrid()
 	{
 		//List<WebElement> lstProducts = lstProductListGrid.findElements((By.tagName("a")));//("//a[contains(@title, 'Faded Short Sleeve T-shirts')]")));
@@ -76,7 +87,12 @@ public class ProductPage extends LoadableComponent<ProductPage>
 		//lnkPTShirt.toString();
 	}
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: findProductAndSelect
+	 * Arguments 		: String pProductName
+	 * Description		: Method to to select the product to place order
+	 *
+	 *****************************************************************************************/ 
 	public void findProductAndSelect(String pProductName)
 	{
 		List<WebElement> lstProducts = getProductsFromGrid();
@@ -106,7 +122,12 @@ public class ProductPage extends LoadableComponent<ProductPage>
 		
 	}
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: enterQuantity
+	 * Arguments 		: String pQuantity
+	 * Description		: Method to enter the quantity of the TShirts
+	 *
+	 *****************************************************************************************/ 
 	public void enterQuantity(String pQuantity) 
 	{
 		BasePage.waitForElement(driver, intSeconds, inpQntyWanted);
@@ -115,7 +136,12 @@ public class ProductPage extends LoadableComponent<ProductPage>
 		inpQntyWanted.sendKeys(pQuantity);
 		
 	}
-	
+	/****************************************************************************************
+	 * MethodName 		: selectSize
+	 * Arguments 		: String pSize
+	 * Description		: Method to select the size of the TSHirt
+	 *
+	 *****************************************************************************************/ 
 	public void selectSize(String pSize) 
 	{
 		BasePage.waitForElement(driver, intSeconds, divSize);
@@ -147,6 +173,12 @@ public class ProductPage extends LoadableComponent<ProductPage>
 		
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: selectColour
+	 * Arguments 		: String pColour
+	 * Description		: Method to choose TShirt colour
+	 *
+	 *****************************************************************************************/ 
 	public void selectColour(String pColour) 
 	{
 		if(pColour.equals("Blue"))
@@ -163,28 +195,43 @@ public class ProductPage extends LoadableComponent<ProductPage>
 		
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: clickExclusiveAddToCart
+	 * Arguments 		: NONE
+	 * Description		: Method to click Addto Cart button
+	 *
+	 *****************************************************************************************/ 
 	public void clickExclusiveAddToCart()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnExclusive);
 		btnExclusive.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: clickContinueShoppingButton
+	 * Arguments 		: NONE
+	 * Description		: Method to click continue shopping button
+	 *
+	 *****************************************************************************************/ 
 	public void clickContinueShoppingButton()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnContinueShopping);
 		btnContinueShopping.click();
 	}
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: clickProceedtoCheckout
+	 * Arguments 		: NONE
+	 * Description		: Method to click Proceed to checkout button
+	 *
+	 *****************************************************************************************/ 
 	public void clickProceedtoCheckout()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnProceedToCheckout);
 		btnProceedToCheckout.click();
 	}
 	
-	
-	
-//product_list grid row
+	//TODO
 	@Override
 	protected void isLoaded() throws Error {
 		// TODO Auto-generated method stub

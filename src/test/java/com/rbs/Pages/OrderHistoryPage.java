@@ -21,6 +21,13 @@ public class OrderHistoryPage extends LoadableComponent<OrderHistoryPage>
 	private WebDriver driver;
 	int intSeconds = 60;
 	
+	/****************************************************************************************
+	 * MethodName 		: OrderHistoryPage
+	 * Arguments 		: NONE
+	 * Description		: Constructor to initialise the page objects and driver
+	 *
+	 *****************************************************************************************
+	 */
 	public OrderHistoryPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -28,49 +35,74 @@ public class OrderHistoryPage extends LoadableComponent<OrderHistoryPage>
 	}
 	
 	//Order History
-		@FindBy(how=How.CSS, using=".button-exclusive")
-		 public static WebElement btnBackToOrder;
-		
-		@FindBy(how=How.CSS, using="#order-list")
-		 public static WebElement tblOrderHistory;
-		
-		@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1)")
-		 public static WebElement trFirstRowOfOrderList;//Latest Order details
-		
-		@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > a:nth-child(1)")
-		 public static WebElement btnViewDetails;//Latest Order details
+	@FindBy(how=How.CSS, using=".button-exclusive")
+	 public static WebElement btnBackToOrder;
 	
-		@FindBy(how=How.CSS, using="#order-detail-content > table:nth-child(1) > tbody:nth-child(3)")
-		 public static WebElement tblProductDetails;//get product details Name, color, size
-		
-		@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(2)")
-		 public static WebElement tdOrderReference;
-		
-		
-		
-		//#order-detail-content > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2) > label:nth-child(1)
-		//#order-detail-content > table:nth-child(1) > tbody:nth-child(3)
-		public void navigateBackToOrderHistory()
-		{
-			BasePage.waitForElement(driver, intSeconds, btnBackToOrder);
-			btnBackToOrder.click();
-		}
+	@FindBy(how=How.CSS, using="#order-list")
+	 public static WebElement tblOrderHistory;
 	
+	@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1)")
+	 public static WebElement trFirstRowOfOrderList;//Latest Order details
+	
+	@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > a:nth-child(1)")
+	 public static WebElement btnViewDetails;//Latest Order details
+	
+	@FindBy(how=How.CSS, using="#order-detail-content > table:nth-child(1) > tbody:nth-child(3)")
+	 public static WebElement tblProductDetails;//get product details Name, color, size
+	
+	@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(2)")
+	 public static WebElement tdOrderReference;
+	
+	
+	
+	/****************************************************************************************
+	 * MethodName 		: navigateBackToOrderHistory
+	 * Arguments 		: NONE
+	 * Description		: Method to navigate back to Order history from Order confirmation page
+	 *
+	 *****************************************************************************************
+	 */
+	public void navigateBackToOrderHistory()
+	{
+		BasePage.waitForElement(driver, intSeconds, btnBackToOrder);
+		btnBackToOrder.click();
+	}
+
+	/****************************************************************************************
+	 * MethodName 		: getOrderList
+	 * Arguments 		: NONE
+	 * Description		: Method to get the number of orders from the order history page and return as a list of web elements
+	 *
+	 *****************************************************************************************
+	 */
 	public List<WebElement> getOrderList()
 	{
 		//List<WebElement> lstProducts = lstProductListGrid.findElements((By.tagName("a")));//("//a[contains(@title, 'Faded Short Sleeve T-shirts')]")));
-
 		BasePage.waitForElement(driver, intSeconds, tblOrderHistory);
 		List<WebElement> lstOrders = tblOrderHistory.findElements((By.tagName("tr")));
 		return lstOrders;
 		//lnkPTShirt.toString();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: getOrdersCount
+	 * Arguments 		: NONE
+	 * Description		: Method to return the total number of orders in the order history page
+	 *
+	 *****************************************************************************************
+	 */
 	public int getOrdersCount()
 	{
 		return (getOrderList().size()-1); //excluding header row 
 	}
 
+	/****************************************************************************************
+	 * MethodName 		: getLatestOrderDetails
+	 * Arguments 		: NONE
+	 * Description		: Method to return the order details from the latest order row
+	 *
+	 *****************************************************************************************
+	 */
 	public List<WebElement> getLatestOrderDetails()
 	{
 		//List<WebElement> lstProducts = lstProductListGrid.findElements((By.tagName("a")));//("//a[contains(@title, 'Faded Short Sleeve T-shirts')]")));
@@ -81,12 +113,26 @@ public class OrderHistoryPage extends LoadableComponent<OrderHistoryPage>
 		//lnkPTShirt.toString();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: ViewOrderDetails
+	 * Arguments 		: NONE
+	 * Description		: Method to view the Latest order details by clicking the View Details button
+	 *
+	 *****************************************************************************************
+	 */
 	public void ViewOrderDetails()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnViewDetails);
 		btnViewDetails.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: VerifyProductDetailsAndOrder
+	 * Arguments 		: NONE
+	 * Description		: Method to verify the product details of the confirmed order
+	 *
+	 *****************************************************************************************
+	 */
 	public void VerifyProductDetailsAndOrder()
 	{
 		BasePage.waitForElement(driver, intSeconds, tblProductDetails);
@@ -102,7 +148,7 @@ public class OrderHistoryPage extends LoadableComponent<OrderHistoryPage>
 		assertEquals(IsOrderDetailsMatching, true);
 	}
 
-
+	//TODO
 	@Override
 	protected void isLoaded() throws Error {
 		// TODO Auto-generated method stub

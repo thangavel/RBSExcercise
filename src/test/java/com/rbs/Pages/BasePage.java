@@ -13,6 +13,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+/****************************************************************************************
+ * Class Name 		: BasePage 
+ * Description	: To Maintain Page objects oriented methods and steps, Further enhancements required,
+ *
+ *****************************************************************************************
+ */
 public class BasePage 
 {
 	public WebDriver driver;
@@ -24,31 +30,28 @@ public class BasePage
         //PageFactory.initElements(driver, this);
     }
 	
-//	public void LaunchBrowser()
-//	{
-//		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver-64.exe");
-//		driver = new FirefoxDriver();
-//		driver.get("http://automationpractice.com/index.php");
-//	}
-//	public BasePage(WebDriver driver)
-//	{
-//		System.out.println("Browser Name ==>" + System.getProperty("browser"));
-//		System.out.println("URL ==>" + System.getProperty("browser"));
-//		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver-64.exe");
-//		driver = new FirefoxDriver();
-//		driver.get("http://automationpractice.com/index.php");
-//		
-//		 //super(driver);
-//		BasePage.driver = driver;
-//		PageFactory.initElements(driver, this);
-//	}
-	
+	/****************************************************************************************
+	 * MethodName 		: waitForElementPresent
+	 * Arguments 		: WebDriver driver, int seconds, WebElement elementTocheck, String msg 
+	 * Description		: to wait for a given element until the timeout is reached. And check if the element is present 
+	 * ex:- if you pass 60 seconds then it will wait for 60 seconds for the given element. if not identified then it will throw error
+	 *
+	 *****************************************************************************************
+	 */
 	public static void waitForElementPresent(WebDriver driver, int seconds, WebElement elementTocheck, String msg) 
 	{
         (new WebDriverWait(driver, seconds).pollingEvery(200, TimeUnit.MILLISECONDS).ignoring(NoSuchElementException.class, StaleElementReferenceException.class).withMessage(msg)).until(ExpectedConditions.visibilityOf(elementTocheck));
 
     }
 	
+	/****************************************************************************************
+	 * MethodName 		: waitForElement
+	 * Arguments 		: WebDriver driver,int intSeconds,WebElement element 
+	 * Description		: to wait for a given element until the timeout is reached. 
+	 * ex:- if you pass 60 seconds then it will wait for 60 seconds for the given element. if not identified then it will throw error
+	 *
+	 *****************************************************************************************
+	 */
 	public static  void  waitForElement(WebDriver driver,int intSeconds,WebElement element)
 	{
 		new WebDriverWait(driver, intSeconds)

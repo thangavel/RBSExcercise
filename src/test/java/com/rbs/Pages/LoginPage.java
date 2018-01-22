@@ -15,14 +15,15 @@ public class LoginPage extends LoadableComponent<LoginPage>
 	int intSeconds = 60;
 	
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: LoginPage
+	 * Arguments 		: NONE
+	 * Description		: Constructor to initialize the driver object
+	 *
+	 *****************************************************************************************
+	 */
 	public LoginPage(WebDriver driver)
 	{
-//		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver-64.exe");
-//		driver = new FirefoxDriver();
-//		driver.get("http://automationpractice.com/index.php");
-//		
-//		 //super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -42,16 +43,37 @@ public class LoginPage extends LoadableComponent<LoginPage>
 		inpEmail.sendKeys(pUserName);
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: enterPassword
+	 * Arguments 		: String pPassWd
+	 * Description		: Method to enter password in the login page
+	 *
+	 *****************************************************************************************
+	 */
 	public void enterPassword(String pPassWd)
 	{
 		inpPassWd.sendKeys(pPassWd);
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: clickSubmit
+	 * Arguments 		: NONE
+	 * Description		: Method to click submit button in the login page
+	 *
+	 *****************************************************************************************
+	 */
 	public void clickSubmit()
 	{
 		btnSubmit.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: loginIntoApplication
+	 * Arguments 		: NONE
+	 * Description		: Method to enter username, password and click submit button in the login page
+	 *
+	 *****************************************************************************************
+	 */
 	public void loginIntoApplication()
 	{
 		enterEmail(TestData.Login.getUserName());//Test data is defined in the TestData.Class

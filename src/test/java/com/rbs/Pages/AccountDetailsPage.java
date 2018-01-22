@@ -11,9 +11,6 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 
 import com.rbs.CucumberTestNG.TestData;
 
-
-
-
 /**
  * @author Thangavel
  *

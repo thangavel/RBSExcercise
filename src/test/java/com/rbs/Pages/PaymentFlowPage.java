@@ -16,6 +16,13 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 	private WebDriver driver;
 	int intSeconds = 60;
 	
+	/****************************************************************************************
+	 * MethodName 		: PaymentFlowPage
+	 * Arguments 		: NONE
+	 * Description		: Constructor to initialise the web driver and page objects
+	 *
+	 *****************************************************************************************
+	 */
 	public PaymentFlowPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -51,25 +58,36 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 	//Your order on My Store is complete
 	
 	
-	
-	
-	
-	
-	
-
-	
+	/****************************************************************************************
+	 * MethodName 		: clickProceedtoCheckout
+	 * Arguments 		: NONE
+	 * Description		: Method to click Procedd to checkout button
+	 *
+	 *****************************************************************************************/ 
 	public void clickProceedtoCheckout()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnProceedToCheckOut);
 		btnProceedToCheckOut.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: clickProceedtoCheckoutAfterDeliveryAddress
+	 * Arguments 		: NONE
+	 * Description		: Method to click proceed to check out after entering addresses
+	 *
+	 *****************************************************************************************/
 	public void clickProceedtoCheckoutAfterDeliveryAddress()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnProceedToCheckOut_Address);
 		btnProceedToCheckOut_Address.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: SelectAgreeTermsAndConditions
+	 * Arguments 		: NONE
+	 * Description		: Method to agree the terms and conditions by selecting check box
+	 *
+	 *****************************************************************************************/
 	public void SelectAgreeTermsAndConditions()
 	{
 		BasePage.waitForElement(driver, intSeconds, chkAgree);
@@ -81,7 +99,12 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 	}
 	
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: clickProceedtoCheckoutForShipping
+	 * Arguments 		: NONE
+	 * Description		: Method to click proceed to check out button after entering shipping address details
+	 *
+	 *****************************************************************************************/
 	public void clickProceedtoCheckoutForShipping()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnProceedToCheckOut_Shipping);
@@ -90,7 +113,12 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 		//executor.executeScript("arguments[0].click();", btnProceedToCheckOut_Shipping);
 	}
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: selectPaymentMethod
+	 * Arguments 		: NONE
+	 * Description		: Method to select differrent payment type during payment process
+	 *
+	 *****************************************************************************************/
 	public void selectPaymentMethod(String pMethod)
 	{
 		if(pMethod.equals("Cheque"))
@@ -105,13 +133,24 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 		}
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: clickConfirmMyOrder
+	 * Arguments 		: NONE
+	 * Description		: Method to click on the confirm order button
+	 *
+	 *****************************************************************************************/
 	public void clickConfirmMyOrder()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnConfirmMyOrder);
 		btnConfirmMyOrder.click();
 	}
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: verifyOrderConfirmationMessage
+	 * Arguments 		: NONE
+	 * Description		: Method to click verify the order confirmation message
+	 *
+	 *****************************************************************************************/
 	public void verifyOrderConfirmationMessage()
 	{
 		BasePage.waitForElement(driver, intSeconds, txtOrderConfirmation);
@@ -121,6 +160,7 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 		assertEquals(msg.contains("Your order on My Store is complete"), true);
 	}
 	
+	//TODO
 	@Override
 	protected void isLoaded() throws Error {
 		// TODO Auto-generated method stub

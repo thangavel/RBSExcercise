@@ -40,45 +40,61 @@ public class HomePage extends LoadableComponent<HomePage>// extends BasePage
 	@FindBy(how=How.CSS, using=".sf-menu > li:nth-child(3)") 
 	 public static WebElement lnk_TShirts;
 	
-	//.sf-menu > li:nth-child(3) > a:nth-child(1)
-	//div[.//span[contains(text(), 'Today')] 
-	 
+	
+
+	/****************************************************************************************
+	 * MethodName 		: navigateToLoginPage
+	 * Arguments 		: NONE
+	 * Description		: to navigate to Login page from Landing page
+	 *
+	 *****************************************************************************************
+	 */
 	public void navigateToLoginPage()
 	{
-		//WebElement eleSignIn = webDriver.findElement(lnk_SignIn);
-		//BasePage.waitForElementPresent(driver, intSeconds, lnk_SignIn, "Verify element is present");
-//		new WebDriverWait(driver, intSeconds)
-//        .until(ExpectedConditions.visibilityOf(lnk_SignIn));
 		BasePage.waitForElement(driver, intSeconds, lnk_SignIn);
 		lnk_SignIn.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: navigateToWomenTab
+	 * Arguments 		: NONE
+	 * Description		: to navigate to women tab from Account page
+	 *
+	 *****************************************************************************************
+	 */
 	public void navigateToWomenTab()
 	{
 		BasePage.waitForElement(driver, intSeconds, lnk_Women);
 		lnk_Women.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: navigateToDressesTab
+	 * Arguments 		: NONE
+	 * Description		: to navigate to Dresses tab from Account page
+	 *
+	 *****************************************************************************************
+	 */
 	public void navigateToDressesTab()
 	{
 		BasePage.waitForElement(driver, intSeconds, lnk_Dresses);
 		lnk_Dresses.click();
 	}
 	
+	/****************************************************************************************
+	 * MethodName 		: navigateToTShirtsTab
+	 * Arguments 		: NONE
+	 * Description		: to navigate to TShirts tab from Account page
+	 *
+	 *****************************************************************************************
+	 */
 	public void navigateToTShirtsTab()
 	{
 		BasePage.waitForElement(driver, intSeconds, lnk_TShirts);
 		lnk_TShirts.click();
 	}
 
-	public void LaunchBrowser() 
-	{
-//		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver-64.exe");
-//		driver = new FirefoxDriver();
-//		driver.get("http://automationpractice.com/index.php");
-		
-	}
-
+	//TODO
 	@Override
 	protected void isLoaded() throws Error {
 		// TODO Auto-generated method stub
