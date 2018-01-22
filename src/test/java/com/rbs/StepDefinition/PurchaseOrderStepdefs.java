@@ -50,19 +50,6 @@ public class PurchaseOrderStepdefs
 
 	private void launchChromeAndOpenURL() 
 	{
-//		ChromeOptions opt = new ChromeOptions();
-//		opt.addArguments("--ignore-certificate-errors");
-//        opt.addArguments("--disable-bundled-ppapi-flash");
-//        opt.addArguments("--disable-extensions");
-//        opt.addArguments("--disable-web-security");
-//        opt.addArguments("--always-authorize-plugins");
-//        opt.addArguments("--allow-running-insecure-content");
-//        opt.addArguments("--test-type");
-//        opt.addArguments("--enable-npapi");
-//        DesiredCapabilities chromeCapabilities = DesiredCapabilities.chrome();
-//        chromeCapabilities.setCapability(ChromeOptions.CAPABILITY, opt);
-//        chromeCapabilities.setCapability(CapabilityType.TAKES_SCREENSHOT, true);
-//        
 		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(TestData.ConfigDetails.getURL());
@@ -123,21 +110,18 @@ public class PurchaseOrderStepdefs
 		paymentFlowPage.clickProceedtoCheckoutAfterDeliveryAddress();
 	}
 
-//	@When("he select the \"([^\"]*)\"$")
 	@When("^he select the Payment Type$")
 	public void he_select_the_Cheque()
 	{
 		paymentFlowPage.SelectAgreeTermsAndConditions();
-		paymentFlowPage.clickProceedtoCheckoutForShipping();
-		paymentFlowPage.selectPaymentMethod(TestData.Payment.getOrderReference());
+		paymentFlowPage.clickProceedtoCheckoutForShipping();		
 	}
 
 	@When("^proceed to checkout$")
 	public void proceed_to_checkout()
 	{
-	   
+		paymentFlowPage.selectPaymentMethod(TestData.Payment.getOrderReference());
 	}
-	
 	
 	@When("^he confirm the order$")
 	public void he_confirm_the_order()
@@ -158,8 +142,5 @@ public class PurchaseOrderStepdefs
 		orderHistoryPage.navigateBackToOrderHistory();
 		orderHistoryPage.ViewOrderDetails();
 		orderHistoryPage.VerifyProductDetailsAndOrder();
-		
-		
-		//orderHistoryPage.getLatestOrderDetails();
 	}
 }
