@@ -30,9 +30,7 @@ public class AccountInfoStepdefs
 	{
 		accountDetailsPage.updateFirstNameAndSave(TestData.AccountInfo.getUpdatedFirstName());
 	   
-	}
-
-	
+	}	
 
 	@Then("^he should see the account info has changed$")
 	public void he_should_see_the_account_info_has_changed()
