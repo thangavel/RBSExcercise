@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BDD Test Suite" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue">
+<!-- 	<parameter name="browserName" value="chrome_windows"></parameter>  -->
+		<parameter name="browser" value="chrome"></parameter>  
+		<parameter name="env" value="RBS"></parameter>
+		<parameter name="webSite" value="http://automationpractice.com/index.php"></parameter>
+		    
+		<parameter name="deviceHost" value="localhost" />
+		<parameter name="devicePort" value="5551" />
+		<parameter name="browserName" value="chrome_windows"></parameter>
+     
+    <test name="Automation Practice Test" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="com.rbs.CucumberTestNGRunners.TestRunner"/>
+        </classes>
+    </test>
+</suite>
