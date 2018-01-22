@@ -11,6 +11,15 @@ import org.openqa.selenium.support.ui.LoadableComponent;
 
 import com.rbs.CucumberTestNG.TestData;
 
+
+
+
+/**
+ * @author Thangavel
+ *
+ *Page object for Account information page.
+ */
+
 public class AccountDetailsPage extends LoadableComponent<AccountDetailsPage>// extends BasePage
 {
 	private WebDriver driver;
@@ -66,6 +75,13 @@ public class AccountDetailsPage extends LoadableComponent<AccountDetailsPage>// 
 	
 	
 	
+	/****************************************************************************************
+	 * MethodName 		: navigateToMyOrderhistoryAndDetailsPage
+	 * Arguments 		: 0 
+	 * Description		: To Navigate to Order History page from Account page
+	 *
+	 *****************************************************************************************
+	 */
 	
 	public void navigateToMyOrderhistoryAndDetailsPage()
 	{
@@ -73,7 +89,13 @@ public class AccountDetailsPage extends LoadableComponent<AccountDetailsPage>// 
 		lnkMyOrderHistoryAndDetails.click();
 	}
 	
-	
+	/****************************************************************************************
+	 * MethodName 		: navigateToMyCreditSlips
+	 * Arguments 		: 0 
+	 * Description		: To Navigate to Credit Slips page from Account page
+	 *
+	 *****************************************************************************************
+	 */
 	public void navigateToMyCreditSlips()
 	{
 		BasePage.waitForElementPresent(driver, intSeconds, MyCreditSlips, "Verify MyCreditSlips element is present");
