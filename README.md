@@ -10,7 +10,7 @@ Test NG and Junit combinely used.
 Resources: 
 I have already kept Chrome and Geckodrivers u can use it for execution. I have added resources in the git repository as well. 
 
-Please check whether the Chromedriver is compatible with your Chrome browser is in path ${project.base.dir}\src\test\resources\
+Please check whether the Chromedriver & Geckodrivers is compatible
 
 Ways to run the test (Run tests with Eclipse)
 ====================================================
