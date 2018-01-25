@@ -73,10 +73,9 @@ public class PurchaseOrderStepdefs
 	@After
     public void CleanTest()
  	{
-		driver.close();
-		driver.quit();//to dispose the driver 
-		TestData.driver.quit();
-    }
+		if (driver != null)
+			driver.quit();
+ 	}
 	 
 	@Given("^The user logged into the application$")
 	public void The_user_logged_into_the_application()
