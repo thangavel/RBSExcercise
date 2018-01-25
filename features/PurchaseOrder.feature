@@ -3,7 +3,7 @@ Feature: Online Shopping
   In order to test this application
   As a registered user I want to purchase a TShirt and update my first name in my account details
 
-   @Order
+   @PurchaceOrder
   Scenario: Order T-Shirt and Verify in Order History
     Given The user logged into the application
     When navigate to the TShirts tab, select a TShirt

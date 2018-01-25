@@ -41,16 +41,16 @@ public class OrderHistoryPage extends LoadableComponent<OrderHistoryPage>
 	@FindBy(how=How.CSS, using="#order-list")
 	 public static WebElement tblOrderHistory;
 	
-	@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1)")
+	@FindBy(how=How.CSS, using="#order-list > tbody > tr.first_item")
 	 public static WebElement trFirstRowOfOrderList;//Latest Order details
 	
-	@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > a:nth-child(1)")
+	@FindBy(how=How.CSS, using="tr.first_item a[href*='order-detail'][class*='default']>span")
 	 public static WebElement btnViewDetails;//Latest Order details
 	
-	@FindBy(how=How.CSS, using="#order-detail-content > table:nth-child(1) > tbody:nth-child(3)")
+	@FindBy(how=How.CSS, using="#order-detail-content > table > tbody > tr > td.bold > label")
 	 public static WebElement tblProductDetails;//get product details Name, color, size
 	
-	@FindBy(how=How.CSS, using="#order-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(2)")
+	@FindBy(how=How.CSS, using=" tr.first_item a.color-myaccount")
 	 public static WebElement tdOrderReference;
 	
 	

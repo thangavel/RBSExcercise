@@ -39,16 +39,16 @@ public class AccountDetailsPage extends LoadableComponent<AccountDetailsPage>// 
 	}
 	
 	
-	@FindBy(how=How.CSS, using="div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(1)")
+	@FindBy(how=How.CSS, using="a[title='Orders']")//"div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(1)")
 	 public static WebElement lnkMyOrderHistoryAndDetails;
 	
-	@FindBy(how=How.CSS, using="div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(2)")
+	@FindBy(how=How.CSS, using="a[title='Credit slips']")//"div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(2)")
 	 public static WebElement MyCreditSlips;
 	
-	@FindBy(how=How.CSS, using="div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(3)")
+	@FindBy(how=How.CSS, using="a[title='Addresses']")//div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(3)")
 	 public static WebElement MyAddresses;
 	
-	@FindBy(how=How.CSS, using="div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(4)")
+	@FindBy(how=How.CSS, using="a[title='Information']")//"div.col-sm-6:nth-child(1) > ul:nth-child(1) > li:nth-child(4)")
 	 public static WebElement lnkMyPersonalInformation;
 	
 	@FindBy(how=How.CSS, using="#firstname")
@@ -57,7 +57,7 @@ public class AccountDetailsPage extends LoadableComponent<AccountDetailsPage>// 
 	@FindBy(how=How.CSS, using="#old_passwd")
 	 public static WebElement inpOldPassword;
 	
-	@FindBy(how=How.CSS, using="button.btn:nth-child(1)")
+	@FindBy(how=How.CSS, using="button[name='submitIdentity']")//"button.btn:nth-child(1)")
 	 public static WebElement btnSave;
 	
 	@FindBy(how=How.CSS, using=".alert")
@@ -66,7 +66,7 @@ public class AccountDetailsPage extends LoadableComponent<AccountDetailsPage>// 
 	@FindBy(how=How.CSS, using=".account")
 	 public static WebElement txtAccountName;
 	
-	@FindBy(how=How.CSS, using=".footer_links > li:nth-child(1) > a:nth-child(1)")
+	@FindBy(how=How.CSS, using="ul[class='footer_links clearfix']>li>a[href$='my-account']")//".footer_links > li:nth-child(1) > a:nth-child(1)")
 	 public static WebElement btnBackToYourAccount;
 	
 	

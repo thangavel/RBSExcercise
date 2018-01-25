@@ -33,11 +33,11 @@ public class HomePage extends LoadableComponent<HomePage>// extends BasePage
 	@FindBy(how=How.CSS, using="div.header_user_info a.login")
 	 public static WebElement lnk_SignIn;
 	
-	@FindBy(how=How.CSS, using=".sf-menu > li:nth-child(1)")
+	@FindBy(how=How.CSS, using="ul[class*='enabled']>li>a[title='Women'][href*='id_category']")
 	 public static WebElement lnk_Women;
-	@FindBy(how=How.CSS, using=".sf-menu > li:nth-child(2)")
+	@FindBy(how=How.CSS, using="ul[class*='enabled']>li>a[title='Dresses'][href*='id_category']")
 	 public static WebElement lnk_Dresses;
-	@FindBy(how=How.CSS, using=".sf-menu > li:nth-child(3)") 
+	@FindBy(how=How.CSS, using="ul[class*='enabled']>li>a[title='T-shirts'][href*='id_category']") 
 	 public static WebElement lnk_TShirts;
 	
 	

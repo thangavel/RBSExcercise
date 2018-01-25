@@ -100,7 +100,7 @@ public class PurchaseOrderStepdefs
 	    productPage.selectSize(TestData.Product.getSize());
 	    productPage.selectColour(TestData.Product.getColor());
 	    productPage.clickExclusiveAddToCart();
-	    productPage.clickProceedtoCheckout();//Product page
+	    productPage.clickProceedToCheckout();//Product page
 	    
 	    paymentFlowPage.clickProceedtoCheckout();//Payment PAge
 	    

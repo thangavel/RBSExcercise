@@ -32,7 +32,7 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 	@FindBy(how=How.CSS, using=".standard-checkout")
 	 public static WebElement btnProceedToCheckOut;
 	
-	@FindBy(how=How.CSS, using="button.button:nth-child(4)")
+	@FindBy(how=How.CSS, using="button[name='processAddress']")//a[class*='standard-checkout']>span")//button.button:nth-child(4)")
 	 public static WebElement btnProceedToCheckOut_Address;
 	
 	
@@ -40,7 +40,7 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 	@FindBy(how=How.CSS, using="#uniform-cgv")//.checkbox > label:nth-child(2) //#cgv
 	 public static WebElement chkAgree;
 	
-	@FindBy(how=How.CSS, using="button.button:nth-child(4)")
+	@FindBy(how=How.CSS, using="button[name='processCarrier']")//"button.button:nth-child(4)")
 	 public static WebElement btnProceedToCheckOut_Shipping;
 	
 	@FindBy(how=How.CSS, using=".cheque")

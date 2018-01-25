@@ -45,22 +45,22 @@ public class ProductPage extends LoadableComponent<ProductPage>
 	@FindBy(how=How.CSS, using="#uniform-group_1")
 	 public static WebElement divSize;
 	
-	@FindBy(how=How.CSS, using="#color_to_pick_list > li:nth-child(1)")
+	@FindBy(how=How.CSS, using="a[name='Orange']")//#color_to_pick_list > li:nth-child(1)")
 	 public static WebElement lnkColorOrange;
 	
-	@FindBy(how=How.CSS, using="#color_to_pick_list > li:nth-child(2)")
+	@FindBy(how=How.CSS, using="a[name='Blue']")//"#color_to_pick_list > li:nth-child(2)")
 	 public static WebElement lnkColorBlue;//#color_to_pick_list > li:nth-child(2)
 	
 	
 	
 	@FindBy(how=How.CSS, using="button.exclusive")
-	 public static WebElement btnExclusive;
+	 public static WebElement btnExclusiveAddToCart;
 	
 	
 	@FindBy(how=How.CSS, using=".continue")
 	 public static WebElement btnContinueShopping;
 	
-	@FindBy(how=How.CSS, using="a.btn:nth-child(2)")
+	@FindBy(how=How.CSS, using="a[class='btn btn-default button button-medium']>span")//using="a.btn:nth-child(2)")
 	 public static WebElement btnProceedToCheckout;
 	
 	
@@ -203,8 +203,8 @@ public class ProductPage extends LoadableComponent<ProductPage>
 	 *****************************************************************************************/ 
 	public void clickExclusiveAddToCart()
 	{
-		BasePage.waitForElement(driver, intSeconds, btnExclusive);
-		btnExclusive.click();
+		BasePage.waitForElement(driver, intSeconds, btnExclusiveAddToCart);
+		btnExclusiveAddToCart.click();
 	}
 	
 	/****************************************************************************************
@@ -225,7 +225,7 @@ public class ProductPage extends LoadableComponent<ProductPage>
 	 * Description		: Method to click Proceed to checkout button
 	 *
 	 *****************************************************************************************/ 
-	public void clickProceedtoCheckout()
+	public void clickProceedToCheckout()
 	{
 		BasePage.waitForElement(driver, intSeconds, btnProceedToCheckout);
 		btnProceedToCheckout.click();
