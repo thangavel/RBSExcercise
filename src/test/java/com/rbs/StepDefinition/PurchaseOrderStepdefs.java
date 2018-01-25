@@ -3,6 +3,8 @@ package com.rbs.StepDefinition;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+
 import com.rbs.CucumberTestNG.TestData;
 import com.rbs.Pages.HomePage;
 import com.rbs.Pages.LoginPage;
@@ -72,7 +74,8 @@ public class PurchaseOrderStepdefs
     public void CleanTest()
  	{
 		driver.close();
- 		
+		driver.quit();//to dispose the driver 
+		TestData.driver.quit();
     }
 	 
 	@Given("^The user logged into the application$")
