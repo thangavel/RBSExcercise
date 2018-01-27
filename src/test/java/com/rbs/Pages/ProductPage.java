@@ -1,5 +1,7 @@
 package com.rbs.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -12,6 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import com.rbs.CucumberTestNG.TestData;
 
 public class ProductPage extends LoadableComponent<ProductPage>
 {
@@ -231,15 +235,19 @@ public class ProductPage extends LoadableComponent<ProductPage>
 		btnProceedToCheckout.click();
 	}
 	
-	//TODO
 	@Override
-	protected void isLoaded() throws Error {
-		// TODO Auto-generated method stub
+	protected void isLoaded() throws Error 
+	{
+		assertEquals(
+	            TestData.isPageLoaded,true,
+	            "Page is not loaded/ Title is mismatching");
 		
 	}
+
 	@Override
-	protected void load() {
-		// TODO Auto-generated method stub
+	protected void load() 
+	{
+		BasePage.isPageLoaded(driver, "My account - My Store");
 		
 	}
 }

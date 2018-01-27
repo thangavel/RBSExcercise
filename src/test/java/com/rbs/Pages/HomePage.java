@@ -1,5 +1,7 @@
 package com.rbs.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,25 +9,17 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 
+import com.rbs.CucumberTestNG.TestData;
+
 //import com.rbs.CucumberTestNG.WebDriverFactory;
 
 public class HomePage extends LoadableComponent<HomePage>// extends BasePage
 {
 	private WebDriver driver;
 	int intSeconds = 60;
-	//URL remoteURL ;
-	public HomePage()
-	{
-		//this.driver=super(driver);
-	}
-	
+		
 	public HomePage(WebDriver driver)
 	{
-//		System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\geckodriver-64.exe");
-//		driver = new FirefoxDriver();
-//		driver.get("http://automationpractice.com/index.php");
-//		
-//		 //super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -94,16 +88,20 @@ public class HomePage extends LoadableComponent<HomePage>// extends BasePage
 		lnk_TShirts.click();
 	}
 
-	//TODO
+	
 	@Override
-	protected void isLoaded() throws Error {
-		// TODO Auto-generated method stub
+	protected void isLoaded() throws Error 
+	{
+		assertEquals(
+	            TestData.isPageLoaded,true,
+	            "Page is not loaded/ Title is mismatching");
 		
 	}
 
 	@Override
-	protected void load() {
-		// TODO Auto-generated method stub
+	protected void load() 
+	{
+		BasePage.isPageLoaded(driver, "My Store");
 		
 	}
 	

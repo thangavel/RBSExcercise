@@ -9,6 +9,8 @@ public class TestData
 {
 	
 	public static WebDriver driver;
+	public static boolean isPageLoaded = false;
+	public final static int waitTime = 30;
 		
 	public static class ConfigDetails
 	{

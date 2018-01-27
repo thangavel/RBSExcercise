@@ -1,5 +1,7 @@
 package com.rbs.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -84,14 +86,18 @@ public class LoginPage extends LoadableComponent<LoginPage>
 	}
 
 	@Override
-	protected void isLoaded() throws Error {
-		// TODO Auto-generated method stub
+	protected void isLoaded() throws Error 
+	{
+		assertEquals(
+	            TestData.isPageLoaded,true,
+	            "Page is not loaded/ Title is mismatching");
 		
 	}
 
 	@Override
-	protected void load() {
-		// TODO Auto-generated method stub
+	protected void load() 
+	{
+		BasePage.isPageLoaded(driver, "Login - My Store");
 		
 	}
 }

@@ -9,6 +9,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 
+import com.rbs.CucumberTestNG.TestData;
+
 public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 
 {
@@ -160,16 +162,19 @@ public class PaymentFlowPage extends LoadableComponent<PaymentFlowPage>
 		assertEquals(msg.contains("Your order on My Store is complete"), true);
 	}
 	
-	//TODO
 	@Override
-	protected void isLoaded() throws Error {
-		// TODO Auto-generated method stub
+	protected void isLoaded() throws Error 
+	{
+		assertEquals(
+	            TestData.isPageLoaded,true,
+	            "Page is not loaded/ Title is mismatching");
 		
 	}
 
 	@Override
-	protected void load() {
-		// TODO Auto-generated method stub
+	protected void load() 
+	{
+		BasePage.isPageLoaded(driver, "My Store");
 		
 	}
 

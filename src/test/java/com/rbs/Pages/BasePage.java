@@ -1,8 +1,12 @@
 package com.rbs.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 
 //package com.testerstories.pages;
@@ -10,7 +14,10 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.rbs.CucumberTestNG.TestData;
 
 
 /****************************************************************************************
@@ -58,5 +65,28 @@ public class BasePage
         .until(ExpectedConditions.visibilityOf(element));
 	}
 	
+	public static void isPageLoaded(WebDriver driver, String title)
+	{
+		waitForPageLoad(driver,TestData.waitTime);
+		
+		if(driver.getTitle().toLowerCase().trim().contains(title.toLowerCase()))
+			TestData.isPageLoaded = true;
+	}
+	
+	public static void waitForPageLoad(WebDriver driver,int waitTime) 
+	{
+
+	    Wait<WebDriver> wait = new WebDriverWait(driver, waitTime);
+	    wait.until(new Function<WebDriver, Boolean>() 
+	    {
+	        public Boolean apply(WebDriver driver) {
+	            System.out.println("Current Window State       : "
+	                + String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")));
+	            return String
+	                .valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
+	                .equals("complete");
+	        }
+	    });
+	}	
 	
 }

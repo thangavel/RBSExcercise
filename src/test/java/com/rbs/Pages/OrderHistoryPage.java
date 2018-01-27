@@ -148,18 +148,19 @@ public class OrderHistoryPage extends LoadableComponent<OrderHistoryPage>
 		assertEquals(IsOrderDetailsMatching, true);
 	}
 
-	//TODO
 	@Override
-	protected void isLoaded() throws Error {
-		// TODO Auto-generated method stub
+	protected void isLoaded() throws Error 
+	{
+		assertEquals(
+	            TestData.isPageLoaded,true,
+	            "Page is not loaded/ Title is mismatching");
 		
 	}
 
-
 	@Override
-	protected void load() {
-		// TODO Auto-generated method stub
+	protected void load() 
+	{
+		BasePage.isPageLoaded(driver, "My Store");
 		
 	}
-
 }
